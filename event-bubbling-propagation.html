@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Event Bubbling</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        main,div,p,span{
+            border: 1px solid red;
+            margin: 40px;
+        }
+        main{
+            background: lightgray;
+        }
+        div{
+            background: lightslategray;
+        }
+        p{
+            background: lightsteelblue;
+        }
+        span { 
+            height: 100px;
+            width: 70px;
+            background: lightyellow;
+            display: block;
+        }
+        .gold{
+            background:gold !important;
+        }
+
+    </style>
+</head>
+<body>
+    <main id="m">
+        <div id="d">
+            <p id="p">
+                <span id="s"></span>
+            </p>
+        </div>
+    </main>
+    <script src='event-bubbling-propagation.js'></script>
+</body>
+</html>
