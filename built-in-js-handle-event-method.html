@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>handleEvent method</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Built-in EventListener handleEvent method</h1>
+    <button id="btn">Click the button</button>
+    <script>
+        let obj = {
+            init: function () {
+                document.querySelector('#btn').addEventListener('click', this);
+                document.querySelector('#btn').addEventListener('focus', this);
+                document.querySelector('#btn').addEventListener('blur', this);
+            },
+            handleEvent: function (ev) {
+                //every single function defined by this will going to this function
+                switch (ev.type) {
+                    case 'click':
+                        this.something(ev);
+                        break;
+                    case 'focus':
+                        this.something(ev);
+                        break;
+                    case 'blur':
+                        this.something(ev);
+                        break;
+                    case 'touched':
+                        break;
+                    case 'explode':
+                        break;
+
+                }
+            },
+            something: function (ev) {
+                //gets called by click event list
+                console.log('btn was',ev.type,'-ed.');
+            }
+        }
+        //get things started 
+        obj.init();
+    </script>
+</body>
+
+</html>
